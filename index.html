@@ -40,8 +40,11 @@
           </div>  
        
         </div>
-        <textarea></textarea>
-       <div><button x-on:click="">Pay</button></div> 
+        <div>
+        <input x-model="payCost" type="text">
+       <button x-on:click="checkout">Pay</button>
+       <span x-text="message"></span>
+    </div> 
 
         <div class="pizzas">
             <div class="pizza large_pizza">

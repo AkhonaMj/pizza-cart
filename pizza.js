@@ -4,6 +4,8 @@ function PizzaCart(){
         mediumCost : 0.00,
         largeCost : 0.00,
         totalCost : 0.00,
+        payCost : 0,
+        message : "",
 
 
         addSmallPizza(){
@@ -21,7 +23,13 @@ function PizzaCart(){
         },
 
         checkout(){
-            
+            if(this.payCost < this.totalCost){
+                this.message = "Not enough money"
+            }
+
+            else if(this.payCost >= this.totalCost){
+               this.message = "Enjoy your pizza!"
+            }
         }
 
 
