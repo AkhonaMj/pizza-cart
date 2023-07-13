@@ -13,67 +13,73 @@
 </head>
 
 <body>
-    <h1>Perfect Pizza</h1>
-    <div x-data="{ count : 0}">
-        <h2> Shopping Cart</h2>
-
-        <div class="small">
-            <strong>Small<button x-on:click="count++">+</button><button>-</button></strong>
-            <span x-text="count" class="counter"></span>
-        </div>
-
-        <div class="medium">
-            <strong>Medium<button x-on:click="count++">+</button><button>-</button></strong>
-            <span x-text="count" class="counter"></span>
-        </div>
-
-        <div class="large">
-            <strong>Large<button x-on:click="count++">+</button><button>-</button></strong>
-            <span x-text="count" class="counter"></span>
-        </div>
-
+    <div x-data="Pizza">
+        <h1>Perfect Pizza</h1>
         <div>
-            Payment amount <textarea></textarea>
-        </div>
-        <button x-on:click="">Pay</button>
-    </div>
+            <h2> Shopping Cart</h2>
 
+            <div class="small">
+                <strong>Small<button x-on:click="addSmallPizza">+</button><button>-</button></strong>
+                 <span x-text="smallCost.toFixed(2)" class="counter"></span> 
+            </div>
 
-    <div class="pizzas">
-        <div class="pizza large_pizza">
-            <h2>Large Pizza</h2>
-            <img src="pizza.png" width="140">
-            <h3>R99.99</h3>
-            <div>Lorem ipsum dolor sit amet. Ut odio pariatur sed impedit in</div>
-            <button>Buy</button>
-        </div>
+            <div class="medium">
+                <strong>Medium<button x-on:click="addMediumPizza">+</button><button>-</button></strong>
+               <span x-text="mediumCost.toFixed(2)" class="counter"></span> 
+            </div>
 
-        <div class="pizza medium_pizza">
-            <h2>Medium Pizza</h2>
-            <img src="pizza.png" width="110">
-            <h3>R69.99</h3>
+            <div class="large">
+                <strong>Large<button x-on:click="addLargePizza">+</button><button>-</button></strong>
+                <span x-text="largeCost.toFixed(2)" class="counter"></span>
+            </div>
+
             <div>
-                Lorem ipsum dolor sit amet. Ut odio pariatur sed sunt impedit in</div>
-            <button>Buy</button>
+                Payment amount <textarea></textarea>
+            </div>
+
+           <div><strong>Total Cost</strong>
+            <span x-text="totalCost.toFixed(2)"></span></div>
+          
+            <button x-on:click="totalCost">Pay</button>
         </div>
 
-        <div class="pizza small_pizza">
-            <h2>Small Pizza</h2>
-            <img src="pizza.png" width="75">
-            <h3>R29.99</h3>
-            <div>Lorem ipsum dolor sit amet. Ut odio pariatur sed impedit in</div>
-            <button>Buy</button>
-        </div>
 
+        <div class="pizzas">
+            <div class="pizza large_pizza">
+                <h2>Large Pizza</h2>
+                <img src="pizza.png" width="140">
+                <h3>R99.99</h3>
+                <div>Lorem ipsum dolor sit amet. Ut odio pariatur sed impedit in</div>
+                <button x-on:click="addLargePizza">Buy</button>
+            </div>
+
+            <div class="pizza medium_pizza">
+                <h2>Medium Pizza</h2>
+                <img src="pizza.png" width="110">
+                <h3>R69.99</h3>
+                <div>
+                    Lorem ipsum dolor sit amet. Ut odio pariatur sed sunt impedit in</div>
+                <button x-on:click="addMediumPizza">Buy</button>
+            </div>
+
+            <div class="pizza small_pizza">
+                <h2>Small Pizza</h2>
+                <img src="pizza.png" width="75">
+                <h3>R29.99</h3>
+                <div>Lorem ipsum dolor sit amet. Ut odio pariatur sed impedit in</div>
+                <button x-on:click="addSmallPizza">Buy</button>
+            </div>
+
+
+        </div>
 
     </div>
-
-
     <div class="pizza contact">
         <h2>Contact Details</h2>
         Contact us at: 021 566 4378 info@perfectpizza.com
     </div>
-
+    <script src="pizza.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
