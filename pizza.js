@@ -50,6 +50,8 @@ function PizzaCart() {
         checkout() {
             if (this.payCost < this.totalCost) {
                 this.message = "Not enough money"
+                this.clearMessage()
+
 
             }
 
@@ -69,7 +71,7 @@ function PizzaCart() {
             
             setTimeout(()  => {
                 this.message = "";
-                console.log("hello");
+                
             }, 3000)
         },
 
